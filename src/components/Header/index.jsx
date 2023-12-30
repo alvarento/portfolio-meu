@@ -17,7 +17,7 @@ export default function Header() {
    const [_localStorage, setLocalStorage] = useState(null)
    const [_theme, setTheme] = useState("Claro")
 
-   useEffect(() => {
+   useLayoutEffect(() => {
       let theme = localStorage.getItem('theme')
       setTheme(theme || "Claro")
       setBody(document.body)
