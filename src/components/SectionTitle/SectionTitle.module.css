@@ -1,0 +1,11 @@
+.sectionTitle {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   gap: 1rem;
+   height: 200px;
+   font-size: 2rem;
+   padding: 50px 0;
+   font-weight: 100;
+}

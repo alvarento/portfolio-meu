@@ -1,0 +1,110 @@
+{
+   "projects": [
+      {
+         "name": "project 1",
+         "image": "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
+         "description": "Este é o projeto 1",
+         "deploy": "https://google.com.br",
+         "repository": "https://github.com/alvaronascimento-dev",
+         "stacks": []
+      },
+      {
+         "name": "project 2 e este e o seu titulo sadvsdv dfgsgfdgfds fbsdfb ajkksd aihoipdhga iafobi8hao oinhoifdhoi oihndog",
+         "image": "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
+         "description": "Este é o projeto 2",
+         "deploy": "",
+         "repository": "https://github.com/alvaronascimento-dev",
+         "stacks": []
+      },
+      {
+         "name": "project 3",
+         "image": "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
+         "description": "Este é o projeto 3",
+         "deploy": "https://google.com.br",
+         "repository": "https://github.com/alvaronascimento-dev",
+         "stacks": [
+            "jest",
+            "mysql",
+            "nodejs"
+         ]
+      },
+      {
+         "name": "project 3",
+         "image": "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
+         "description": "Este é o projeto 3",
+         "deploy": "https://google.com.br",
+         "repository": "https://github.com/alvaronascimento-dev",
+         "stacks": [
+            "jest",
+            "mysql",
+            "nodejs"
+         ]
+      },
+      {
+         "name": "project 3",
+         "image": "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
+         "description": "Este é o projeto 3",
+         "deploy": "https://google.com.br",
+         "repository": "https://github.com/alvaronascimento-dev",
+         "stacks": [
+            "jest",
+            "mysql",
+            "nodejs"
+         ]
+      },
+      {
+         "name": "project 4",
+         "image": "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
+         "description": "Este é o projeto 4",
+         "deploy": "https://google.com.br",
+         "repository": "https://github.com/alvaronascimento-dev",
+         "stacks": [
+            "javascript",
+            "nodejs",
+            "mongodb",
+            "html",
+            "mysql",
+            "postgres",
+            "typescript",
+            "mongoose",
+            "javascript",
+            "nodejs",
+            "mongodb",
+            "html",
+            "mysql",
+            "postgres",
+            "typescript",
+            "mongoose",
+            "javascript",
+            "nodejs",
+            "mongodb",
+            "html",
+            "mysql",
+            "postgres",
+            "typescript"
+         ]
+      }
+   ],
+   "skills": [
+      {
+         "name": "HTML",
+         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+      },
+      {
+         "name": "CSS",
+         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+      },
+      {
+         "name": "JavaScript",
+         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+      },
+      {
+         "name": "NodeJS",
+         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+      },
+      {
+         "name": "MySQL",
+         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+      }
+   ]
+}

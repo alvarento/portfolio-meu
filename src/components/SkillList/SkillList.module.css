@@ -1,0 +1,32 @@
+.skillList {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(90px, auto));
+   row-gap: 5rem;
+   column-gap: 6rem;
+   margin-top: 5rem;
+   margin-left: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+   .skillList {
+      margin-left: 0;
+   }
+}
+
+@media screen and (min-width: 769px) {
+   @media (hover: hover) {
+      .skillList:hover> :not(:hover) {
+         opacity: .2 !important;
+         filter: blur(.1px);
+         transform: scale(0.9) !important;
+      }
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .skillList:active> :not(:active) {
+      opacity: .2 !important;
+      filter: blur(.1px);
+      transform: scale(0.9) !important;
+   }
+}

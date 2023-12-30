@@ -1,0 +1,25 @@
+.header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   display: flex;
+   margin: 0 auto !important;
+   text-align: center;
+   /* float: none; */
+   min-width: calc(100%);
+   /* max-width: 1800px; */
+   /* width: 1600px; */
+   height: 110px;
+   justify-content: space-between;
+   align-items: center;
+   z-index: 99;
+   transition: 1s;
+   /* background-color: transparent; */
+   /* background-color: red; */
+}
+
+@media screen and (max-width: 768px) {
+   .header {
+      display: none;
+   }
+}

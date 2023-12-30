@@ -1,0 +1,229 @@
+$pure-white: #ffffff;
+$pure-black: #000000;
+
+$bg-light-color: #f1f3f3;
+$text-light-color: #1b1c1e;
+$primary-color: #007aff;
+$border-color: #d3d3d3;
+
+$bg-dark-color: #24282b;
+$text-dark-color: #f1f3f3;
+$bg-dark-header-color: #212121;
+$bg-dark-card-color: #343434;
+
+$font-text: "Poppins", Arial, Helvetica, sans-serif;
+$font-logo: "Neuropolitical", Arial, Helvetica, sans-serif;
+
+.dark .icon path,
+.dark .iconT2 {
+  fill: var(--pure-white) !important;
+
+}
+
+.dark .iconT3 path {
+  stroke: var(--pure-white);
+}
+
+
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: var(--font-text);
+}
+
+
+body {
+  font-size: 1.6rem;
+  -youbkit-touch-callout: none;
+  -youbkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body a {
+  color: var(--text-light-color);
+}
+
+
+body {
+  margin: 0 auto;
+  max-width: 1600px;
+  float: none;
+  position: relative;
+}
+
+body {
+  background-color: var(--bg-light-color);
+}
+
+.header,
+.banner,
+.about,
+.projects,
+.footer {
+  padding: 0 5%;
+}
+
+.dark {
+  background: radial-gradient(circle at center center, #24282b, #24282b), repeating-radial-gradient(circle at center center, #d3d3d3, #d3d3d3, 4px, transparent 8px, transparent 4px);
+  background-blend-mode: multiply;
+}
+
+.dark {
+
+  .header,
+  .banner,
+  .about,
+  .projects h1,
+  .footer,
+  a {
+    color: $text-dark-color;
+  }
+
+  .logo span {
+    border-left-color: var(--pure-white);
+  }
+
+  .over {
+    color: var(--primary-color);
+    font-weight: 800;
+  }
+
+  .about,
+  .projects,
+  .footer {
+    background-color: transparent;
+  }
+
+  .cardProject {
+    background-color: $bg-light-color;
+  }
+
+  .header.scrolling {
+    background-color: $bg-dark-header-color;
+  }
+
+  .home {
+    background-image: url('../assets/images/bg-dark-image.png');
+
+    .banner {
+      background-color: rgba($color: #212121, $alpha: 0.4);
+    }
+  }
+}
+
+.about,
+.projects,
+.footer {
+  background-color: var(--bg-light-color);
+}
+
+.notFound {
+  width: 100%; height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .notFoundHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 110px;
+  }
+}
+
+.notFoundContent {
+  flex-grow: 1;
+  background-color: green;
+}
+
+.dark .toggleButton {
+  background-color: var(--bg-light-color);
+}
+
+.dark .slider {
+  left: 27px;
+  background-color: var(--bg-dark-color);
+}
+
+.scrolling {
+  background-color: var(--pure-white);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.white-image {
+  display: none;
+}
+
+.dark .white-image {
+  display: initial;
+}
+
+.dark .black-image {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: var(--primary-color);
+  border-radius: .5rem;
+}
+
+.loadingContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: $bg-light-color;
+}
+
+.loading {
+  position: absolute;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  animation: loadingAnimate .5s linear infinite;
+  border-top: 3px solid $pure-black;
+  // border: 2px solid red;
+}
+
+@keyframes loadingAnimate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../../public/assets/fonts/Poppins/Poppins-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Neuropolitical";
+  src: url("../../public/assets/fonts/Neuropolitical/neuropolitical.otf");
+}

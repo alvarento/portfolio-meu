@@ -1,0 +1,15 @@
+.skill {
+   transition: .35s !important;
+   cursor: pointer;
+   border-radius: .5rem;
+   padding: 1rem 0;
+   box-shadow: #007aff 0px 1px 4px, #d3d3d3 0px 0px 0px 3px;
+}
+
+.skill img {
+   width: 50px;
+}
+
+.skill span {
+   display: block;
+}

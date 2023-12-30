@@ -1,0 +1,67 @@
+.scrolling .navbar {
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   border: 1px solid var(--border-color);
+}
+
+.navbar {
+   padding: 20px 40px;
+   display: flex;
+   justify-content: center;
+   gap: 1rem;
+   align-items: center;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+   border: 1px solid var(--border-color);
+   transition: .3s;
+   border-radius: 1rem;
+}
+
+.navbar a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   cursor: pointer;
+}
+
+.over {
+   color: var(--primary-color);
+   font-weight: 800;
+}
+
+.over::before {
+   content: "";
+   animation: animated .5s ease-in-out forwards;
+   height: 2px;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   background-color: var(--primary-color);
+}
+
+@keyframes animated {
+   from { width: 0% } to { width: 100% }
+}
+
+.navbar a:hover,
+.navbar a.active {
+   color: var(--primary-color);
+   font-weight: 800;
+}
+
+.navbar a::after,
+.navbar a.active::after {
+   content: " ";
+   width: 0%;
+   height: 2px;
+   border-radius: 1rem;
+   background-color: var(--primary-color);
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   transition: .5s ease-in-out;
+}
+
+.navbar a:hover::after, .over::after,
+.navbar a.active::after {
+   width: 100%;
+}

@@ -1,0 +1,46 @@
+.aboutList {
+   display: flex;
+   flex-direction: column;
+   gap: 3em;
+   height: 100%;
+   border-right: 1px solid var(--border-color);
+   /* width: 100%; */
+   margin-top: 5rem;
+}
+
+.destaque {
+   position: relative;
+   /* background-color: red; */
+}
+
+.devT {
+   position: absolute;
+   right: -50%;
+   bottom: 110%;
+   width: 300px;
+   height: 200px;
+   border-radius: 2rem 2rem 2rem 2rem;
+   padding: 1rem;
+   opacity: 0;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+   background-color: var(--primary-color);
+   color: var(--text-dark-color);
+   border: .1px solid var(--border-color);
+   transition: .2s;
+}
+
+.devT::before {
+   content: " ";
+   width: 0px;
+   height: 0px;
+   background-color: transparent;
+   border: 10px solid transparent;
+   border-left: 10px solid var(--primary-color);
+   position: absolute;
+   bottom: -8px;
+   left: 30%;
+}
+
+.linkDevT:hover ~ .devT {
+   opacity: 1;
+}

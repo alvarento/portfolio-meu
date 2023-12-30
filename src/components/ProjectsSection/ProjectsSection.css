@@ -1,0 +1,65 @@
+:root {
+   --pure-white: #ffffff;
+   --pure-black: #000000;
+
+   --bg-light-color: #f1f3f3;
+   --text-light-color: #1b1c1e;
+   --primary-color: #007aff;
+   --border-color: #d3d3d3;
+
+   --bg-dark-color: #24282b;
+   --text-dark-color: #f1f3f3;
+   --bg-dark-header-color: #212121;
+   --bg-dark-card-color: #343434;
+
+   --font-text: "Poppins", Arial, Helvetica, sans-serif;
+   --font-logo: "Neuropolitical", Arial, Helvetica, sans-serif;
+}
+
+.swiper {
+   user-select: none;
+   margin-bottom: 50px;
+}
+
+.swiper-button-next:active,
+.swiper-button-prev:active {
+   background-color: var(--primary-color) !important;
+   --swiper-theme-color: var(--pure-white) !important;
+}
+
+@media screen and (min-width: 769px) {
+   @media (hover: hover) {
+
+      .swiper-button-next:hover,
+      .swiper-button-prev:hover {
+         background-color: var(--bg-light-color);
+      }
+   }
+}
+
+.swiper-button-prev {
+   visibility: hidden;
+}
+
+
+.swiper-button-next,
+.swiper-button-prev {
+   --swiper-navigation-size: 20px;
+   --swiper-navigation-top-offset: 55%;
+   --swiper-navigation-sides-offset: 10px;
+   font-weight: 900;
+   transform: translateY(-50%);
+   border-radius: 50%;
+   padding: 2rem;
+   transition: transform 0.1s linear;
+   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+   pointer-events: initial;
+   -webkit-tap-highlight-color: transparent;
+}
+
+.swiper-pagination-bullet {
+   --swiper-pagination-bullet-size: 18px;
+   --swiper-pagination-bullet-inactive-color: #000;
+   color: white;
+   font-size: 1.2rem;
+}

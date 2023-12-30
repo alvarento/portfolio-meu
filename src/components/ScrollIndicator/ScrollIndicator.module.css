@@ -1,0 +1,13 @@
+.progressBar {
+   height: 5px;
+   position: fixed;
+   left: 0;
+   z-index: 99;
+   width: 100%;
+}
+
+.progressIndicator {
+   background: linear-gradient(276deg, rgba(211, 211, 211, 1) 0%, rgba(33, 27, 21, 1) 100%);
+   height: 100%;
+   border-radius: 1rem 0;
+}
