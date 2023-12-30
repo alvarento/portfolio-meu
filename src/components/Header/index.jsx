@@ -7,7 +7,7 @@ import Logo from '../Logo';
 import Navbar from '../Navbar'
 import ThemeSwitch from '../ThemeSwitch';
 import SocialLinks from '../SocialLinks'
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useLayoutEffect } from 'react';
 
 export default function Header() {
    console.log('renderizouuuuuuu')
