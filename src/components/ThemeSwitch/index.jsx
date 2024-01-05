@@ -4,10 +4,20 @@ import styles from './ThemeSwitch.module.css'
 
 import moon from '../../assets/icons/moon.svg?url';
 import sun from '../../assets/icons/sun.svg?url';
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
-export default function ThemeSwitch({ changeTheme, legend }) {
+export default function ThemeSwitch() {
+   // localStorage.clear()
+   const initialTheme = localStorage.getItem('theme') ?? 'light'
+   const initialLegendTheme = initialTheme === 'light' ? 'Claro' : 'Escuro';
+   const [theme, setThemeState] = useState(initialTheme)
+   const [legendTheme, setLegendTheme] = useState(initialLegendTheme)
+
+   useEffect(() => {
+      document.documentElement.classList[theme === 'dark' ? "add" : "remove"]("dark")
+      localStorage.setItem('theme', theme)
+   }, [theme])
 
    // const [storage, setStorage] = useState(useEffect(() => { setStorage(localStorage) }, []))
 
@@ -45,9 +55,17 @@ export default function ThemeSwitch({ changeTheme, legend }) {
 
    return (
       <fieldset className={styles.themeSwitch}>
-         <legend className={styles.legend}>{legend}</legend>
+         <legend id='legendTheme' className={styles.legend}>{legendTheme}</legend>
          <div className={`${styles.toggleButton} toggleButton`}>
-            <div className={`${styles.slider} slider`} onClick={changeTheme}></div>
+            <div
+               id='sliderButton'
+               className={`${styles.slider} slider`}
+               onClick={() => {
+                  setThemeState(theme === "light" ? "dark" : "light")
+                  setLegendTheme(theme === "light" ? "Escuro" : "Claro")
+               }}
+            > 
+            </div>
             <div className={styles.icons}>
                <Image
                   src={moon} alt="moon" width={18} height={18}

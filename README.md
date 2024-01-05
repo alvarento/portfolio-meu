@@ -37,3 +37,42 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 //json-server --watch ./src/api-portifolio.json -p 8080
+
+`(function changeTheme() {
+              const legendTheme = document.querySelector('#legendTheme')
+              const sliderButton = document.querySelector('#sliderButton')
+              console.log(legendTheme)
+              console.log(sliderButton)
+
+              const preferedTheme = window.localStorage.getItem('theme')
+              console.log(preferedTheme)
+
+              if(!preferedTheme) {
+                preferedTheme = "Claro";
+                //legendTheme.textContent = "Claro";
+              }
+
+              if (preferedTheme === 'Claro') {
+                document.body.classList.remove('dark')
+                legendTheme.innerText = 'Claro';
+              }
+
+              if (preferedTheme === 'Escuro') {
+                document.body.classList.add('dark')
+                legendTheme.innerText = 'Escuro';
+              }
+
+              const changeTheme = () => {
+                document.body.classList.toggle('dark')
+                if (preferedTheme === 'Escuro') {
+                  localStorage.setItem('theme', 'Claro')
+                  //legendTheme.textContent = 'Claro'
+                } else {
+                  localStorage.setItem('theme', 'Escuro')
+                  //legendTheme.textContent = 'Escuro'
+                }
+              }
+
+              sliderButton.addEventListener('click', changeTheme)
+          })()
+          `
