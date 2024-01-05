@@ -6,65 +6,44 @@ import moon from '../../assets/icons/moon.svg?url';
 import sun from '../../assets/icons/sun.svg?url';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Script from 'next/script';
 
 export default function ThemeSwitch() {
-   // localStorage.clear()
-   const initialTheme = localStorage.getItem('theme') ?? 'light'
-   const initialLegendTheme = initialTheme === 'light' ? 'Claro' : 'Escuro';
-   const [theme, setThemeState] = useState(initialTheme)
-   const [legendTheme, setLegendTheme] = useState(initialLegendTheme)
+
+   const [theme, setTheme] = useState("Claro")
+   
+   useEffect(() => {
+      setTheme(localStorage.getItem("theme"))
+   }, [])
 
    useEffect(() => {
-      document.documentElement.classList[theme === 'dark' ? "add" : "remove"]("dark")
-      localStorage.setItem('theme', theme)
+      setTheme(window.__theme)
+   }, [])
+
+   useEffect(() => {
+      localStorage.setItem("theme", theme)
+      if (theme === 'Escuro') {
+         document.documentElement.classList.add('dark');
+      } else if (theme === 'Claro') {
+         document.documentElement.classList.remove('dark');
+      }
    }, [theme])
-
-   // const [storage, setStorage] = useState(useEffect(() => { setStorage(localStorage) }, []))
-
-   
-
-   // let theme = localStorage.getItem('theme')
-
-   // console.log(theme)
-   // // localStorage.clear()
-   // const [legend, setLegend] = useState(theme || 'Claro')
-
-   // if (theme === 'Claro') {
-   //    document.body.classList.remove('dark')
-   // }
-
-
-   // if (theme === 'Escuro') {
-   //    document.body.classList.add('dark')
-   // }
-
-   // console.log(theme === 'Escuro')
-
-   // const changeTheme = () => {
-   //    document.body.classList.toggle('dark');
-   //    if (theme === 'Escuro') {
-   //       localStorage.setItem('theme', 'Claro');
-   //       document.body.classList.remove('dark');
-   //       setLegend('Claro')
-   //    } else {
-   //       localStorage.setItem('theme', 'Escuro');
-   //       document.body.classList.add('dark')
-   //       setLegend('Escuro')
-   //    }
-   // }
 
    return (
       <fieldset className={styles.themeSwitch}>
-         <legend id='legendTheme' className={styles.legend}>{legendTheme}</legend>
+         <legend id='legendTheme' className={styles.legend}></legend>
          <div className={`${styles.toggleButton} toggleButton`}>
             <div
                id='sliderButton'
                className={`${styles.slider} slider`}
                onClick={() => {
-                  setThemeState(theme === "light" ? "dark" : "light")
-                  setLegendTheme(theme === "light" ? "Escuro" : "Claro")
+                  if (theme === "Claro") {
+                     setTheme("Escuro")
+                  } else if (theme === "Escuro") {
+                     setTheme("Claro")
+                  }
                }}
-            > 
+            >
             </div>
             <div className={styles.icons}>
                <Image
@@ -75,6 +54,65 @@ export default function ThemeSwitch() {
                />
             </div>
          </div>
+         <script
+            dangerouslySetInnerHTML={{
+               __html: customScript,
+            }}
+         ></script>
       </fieldset>
    )
 }
+
+
+const customScript = `
+  (function () {
+   function setTheme(newTheme) {
+      window.__theme = newTheme;
+      if (newTheme === 'Escuro') {
+         document.documentElement.classList.add('dark');
+      } else if (newTheme === 'Claro') {
+         document.documentElement.classList.remove('dark');
+      }
+   }
+
+   // const legendThemeEl = document.querySelector('#legendTheme')
+   // legendThemeEl.textContent = window.__theme
+   // console.log(legendThemeEl)
+
+   var preferredTheme;
+   try {
+      preferredTheme = localStorage.getItem('theme');
+   } catch (err) { }
+
+   window.__setPreferredTheme = function(newTheme) {
+      preferredTheme = newTheme;
+      setTheme(newTheme);
+      try {
+         localStorage.setItem('theme', newTheme);
+      } catch (err) { }
+   };
+
+   var initialTheme = preferredTheme;
+   // var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+   if (!initialTheme) {
+      // initialTheme = darkQuery.matches ? 'dark' : 'light';
+      initialTheme = "Claro";
+   }
+   setTheme(initialTheme);
+
+   // darkQuery.addEventListener('change', function (e) {
+   //    if (!preferredTheme) {
+   //       setTheme(e.matches ? 'dark' : 'light');
+   //    }
+   // });
+
+   // Detect whether the browser is Mac to display platform specific content
+   // An example of such content can be the keyboard shortcut displayed in the search bar
+   document.documentElement.classList.add(
+         window.navigator.platform.includes('Mac')
+         ? "platform-mac"
+         : "platform-win"
+   );
+   })();
+  `

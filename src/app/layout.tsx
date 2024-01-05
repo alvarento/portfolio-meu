@@ -19,14 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
-      <Script
-        id="show-banner"
-        dangerouslySetInnerHTML={{
-          __html: `
-          `,
-        }}
-      />
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
   )
 }

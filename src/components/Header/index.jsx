@@ -71,51 +71,6 @@ export default function Header() {
          <Navbar />
          <ThemeSwitch/>
          <SocialLinks />
-         {/*<Script
-            strategy="lazyOnload"
-            id="changeTheme"
-            dangerouslySetInnerHTML={{
-               __html:
-                  `(function changeTheme() {
-              const legendTheme = document.querySelector('#legendTheme')
-              const sliderButton = document.querySelector('#sliderButton')
-              console.log(legendTheme)
-              console.log(sliderButton)
-
-              const preferedTheme = window.localStorage.getItem('theme')
-              console.log(preferedTheme)
-
-              if(!preferedTheme) {
-                preferedTheme = "Claro";
-                //legendTheme.textContent = "Claro";
-              }
-
-              if (preferedTheme === 'Claro') {
-                document.body.classList.remove('dark')
-                legendTheme.innerText = 'Claro';
-              }
-
-              if (preferedTheme === 'Escuro') {
-                document.body.classList.add('dark')
-                legendTheme.innerText = 'Escuro';
-              }
-
-              const changeTheme = () => {
-                document.body.classList.toggle('dark')
-                if (preferedTheme === 'Escuro') {
-                  localStorage.setItem('theme', 'Claro')
-                  //legendTheme.textContent = 'Claro'
-                } else {
-                  localStorage.setItem('theme', 'Escuro')
-                  //legendTheme.textContent = 'Escuro'
-                }
-              }
-
-              sliderButton.addEventListener('click', changeTheme)
-          })()
-          `
-            }}
-         />*/}
       </header>
    )
 }

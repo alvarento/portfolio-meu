@@ -82,7 +82,15 @@ body {
   background-blend-mode: multiply;
 }
 
+#legendTheme::before {
+  content: "Claro";
+}
+
 .dark {
+
+  #legendTheme::before {
+      content: "Escuro";
+    }
 
   .header,
   .banner,
