@@ -10,23 +10,34 @@ import Script from 'next/script';
 
 export default function ThemeSwitch() {
 
-   const [theme, setTheme] = useState("Claro")
-   
-   useEffect(() => {
-      setTheme(localStorage.getItem("theme"))
-   }, [])
-
-   useEffect(() => {
-      setTheme(window.__theme)
-   }, [])
-
-   useEffect(() => {
-      localStorage.setItem("theme", theme)
-      if (theme === 'Escuro') {
-         document.documentElement.classList.add('dark');
-      } else if (theme === 'Claro') {
-         document.documentElement.classList.remove('dark');
+   const [theme, setTheme] = useState(() => {
+      if (typeof window !== "undefined") {
+         console.log(true)
+         const valueTheme = window.__theme
+         return valueTheme;
       }
+   })
+
+   console.log(theme)
+   // useEffect(() => {
+   //    setTheme(localStorage.getItem("theme"))
+   // }, [])
+
+   // useEffect(() => {
+   //    setTheme(window.__theme)
+   // }, [])
+
+   // useEffect(() => {
+   //    localStorage.setItem("theme", theme)
+   //    if (theme === 'dark') {
+   //       document.documentElement.classList.add('dark');
+   //    } else if (theme === 'light') {
+   //       document.documentElement.classList.remove('dark');
+   //    }
+   // }, [theme])
+
+   useEffect(() => {
+      window.__setPreferredTheme(theme)
    }, [theme])
 
    return (
@@ -37,10 +48,10 @@ export default function ThemeSwitch() {
                id='sliderButton'
                className={`${styles.slider} slider`}
                onClick={() => {
-                  if (theme === "Claro") {
-                     setTheme("Escuro")
-                  } else if (theme === "Escuro") {
-                     setTheme("Claro")
+                  if (theme === "light") {
+                     setTheme("dark")
+                  } else if (theme === "dark") {
+                     setTheme("light")
                   }
                }}
             >
@@ -68,16 +79,19 @@ const customScript = `
   (function () {
    function setTheme(newTheme) {
       window.__theme = newTheme;
-      if (newTheme === 'Escuro') {
+      if (newTheme === 'dark') {
          document.documentElement.classList.add('dark');
-      } else if (newTheme === 'Claro') {
+      } else if (newTheme === 'light') {
          document.documentElement.classList.remove('dark');
       }
    }
 
-   // const legendThemeEl = document.querySelector('#legendTheme')
+   // const sliderButtonEl = document.querySelector('#sliderButton')
    // legendThemeEl.textContent = window.__theme
-   // console.log(legendThemeEl)
+   // console.log(sliderButton)
+   // sliderButton.addEventListener("click", () => {
+   //    if ()
+   // })
 
    var preferredTheme;
    try {
@@ -97,8 +111,10 @@ const customScript = `
 
    if (!initialTheme) {
       // initialTheme = darkQuery.matches ? 'dark' : 'light';
-      initialTheme = "Claro";
+      initialTheme = "light";
    }
+
+   console.log("Tema inicial", initialTheme)
    setTheme(initialTheme);
 
    // darkQuery.addEventListener('change', function (e) {
