@@ -95,11 +95,16 @@ body {
   .header,
   .banner,
   .about,
-  .projects h1,
+  .projects,
   .footer,
+  .projects span,
   a {
     color: $text-dark-color;
   }
+
+  // .projects .icon path {
+  //   fill: var(--pure-white) !important;
+  // }
 
   .logo span {
     border-left-color: var(--pure-white);
@@ -117,7 +122,8 @@ body {
   }
 
   .cardProject {
-    background-color: $bg-light-color;
+    background-color: $bg-dark-card-color;
+    border: none;
   }
 
   .header.scrolling {

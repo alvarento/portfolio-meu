@@ -1,4 +1,4 @@
-'use client'
+// 'use client'
 
 import styles from './ThemeSwitch.module.css'
 
@@ -10,31 +10,14 @@ import Script from 'next/script';
 
 export default function ThemeSwitch() {
 
+   console.log("Renderizou o tema")
+
    const [theme, setTheme] = useState(() => {
       if (typeof window !== "undefined") {
-         console.log(true)
          const valueTheme = window.__theme
          return valueTheme;
       }
    })
-
-   console.log(theme)
-   // useEffect(() => {
-   //    setTheme(localStorage.getItem("theme"))
-   // }, [])
-
-   // useEffect(() => {
-   //    setTheme(window.__theme)
-   // }, [])
-
-   // useEffect(() => {
-   //    localStorage.setItem("theme", theme)
-   //    if (theme === 'dark') {
-   //       document.documentElement.classList.add('dark');
-   //    } else if (theme === 'light') {
-   //       document.documentElement.classList.remove('dark');
-   //    }
-   // }, [theme])
 
    useEffect(() => {
       window.__setPreferredTheme(theme)

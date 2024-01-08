@@ -3,7 +3,7 @@
 
 import './ProjectsSection.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination} from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -17,19 +17,26 @@ import { projects as projects2 } from '../../api-portifolio.json'
 
 import CardPorject from '../CardProject'
 import { useEffect, useState } from 'react';
+import AlternativeText from '../AlternativeText';
+
+import projectsBuild from '../../../public/images/projects-build.png'
 
 
 
 export default function ProjectsSection() {
    console.log('renderizou a Seção de projetos')
-   
+
    const [projects, setProjects] = useState([])
 
-   useEffect( () => {
+   useEffect(() => {
       async function fetchProjects() {
-         const response = await fetch('http://localhost:8080/projects')
-         const projects = await response.json()
-         setProjects(projects || projects2)
+         try {
+            const response = await fetch('http://localhost:8080/projects')
+            const projects = await response.json()
+            setProjects(projects)
+         } catch (error) {
+            return;
+         }
       }
       fetchProjects();
    }, [])
@@ -71,8 +78,9 @@ export default function ProjectsSection() {
                }
             }}
          >
-
-            {projects.map((project, index) => <SwiperSlide key={index}>{<CardPorject project={project} />}</SwiperSlide>)}
+            {projects.length > 0 ?
+               projects.map((project, index) => <SwiperSlide key={index}>{<CardPorject project={project} />}</SwiperSlide>) : <AlternativeText text="Novos projetos em breve!" imageSrc={projectsBuild}/>
+            }
          </Swiper>
       </section>
    )
