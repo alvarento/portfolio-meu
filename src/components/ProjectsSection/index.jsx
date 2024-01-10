@@ -34,6 +34,7 @@ export default function ProjectsSection() {
             const response = await fetch('http://localhost:8080/projects')
             const projects = await response.json()
             setProjects(projects)
+
          } catch (error) {
             return;
          }

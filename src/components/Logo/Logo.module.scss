@@ -4,17 +4,29 @@
    justify-content: center;
    text-align: center;
    /* background-color: red; */
+
+   svg {
+      /* padding-right: 0.8rem; */
+      margin-right: 0.8rem;
+      /* background-color: blue; */
+   }
+
+   span {
+      font-family: "Neuropolitical";
+      border-left: .1px solid var(--pure-black);
+      padding-left: 0.8rem;
+      height: 25px;
+   }
+
 }
 
-.logo svg {
-   /* padding-right: 0.8rem; */
-   margin-right: 0.8rem;
-   /* background-color: blue; */
-}
-
-.logo span {
-   font-family: "Neuropolitical";
-   border-left: .1px solid var(--pure-black);
-   padding-left: 0.8rem;
-   height: 25px;
+@media screen and (max-width: 768px) {
+.logo {
+      font-size: 1.3rem;
+      margin-top: 1.5rem;
+      align-items: center;
+      position: relative;
+      align-self: flex-start;
+      margin-left: 1.5rem;
+   }
 }

@@ -1,0 +1,34 @@
+.menu {
+   display: none;
+}
+
+.open {
+   position: absolute;
+   display: initial;
+   background-color: var(--pure-white);
+   width: 90vw;
+   height: 28vw;
+   top: 5rem;
+   gap: .5rem;
+   right: -8rem;
+   border-radius: 1rem 0 1rem 1rem;
+   display: flex;
+   justify-content: space-between;
+   border: 1px solid var(--border-color);
+   padding: 1rem;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 24px;
+   animation: slide-left .8s cubic-bezier(.25, .46, .45, .94) both;
+   transition: slide-left 10s;
+}
+
+@keyframes slide-left {
+   0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+   }
+
+   100% {
+      -webkit-transform: translateX(-100px);
+      transform: translateX(-100px);
+   }
+}

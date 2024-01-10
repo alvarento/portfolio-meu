@@ -65,3 +65,15 @@
 .navbar a.active::after {
    width: 100%;
 }
+
+@media screen and (max-width: 768px) {
+   .navbar {
+         min-width: 100vw;
+         justify-content: space-around;
+         transition: 1s;
+         border: none;
+         box-shadow: none;
+         opacity: 0;
+         visibility: hidden;
+      }
+}

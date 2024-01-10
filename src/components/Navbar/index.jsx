@@ -12,7 +12,7 @@ export default function Navbar() {
    }
 
    return (
-      <nav className={styles.navbar}>
+      <nav className={`${styles.navbar} navbar`}>
          <Link to="home" {...scrollOptions}>Inicio</Link>
          <Link to="about" {...scrollOptions}>Sobre</Link>
          <Link to="projects" {...scrollOptions}>Projetos</Link>

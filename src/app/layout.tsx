@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.scss'
+// import { IsOpenMenuContextProvider } from '@/contexts/openMenuContext'
 
 const inter = Inter({ subsets: ['latin'] })
 

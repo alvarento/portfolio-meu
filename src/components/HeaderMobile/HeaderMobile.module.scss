@@ -1,0 +1,13 @@
+.headerMobile {
+   flex-direction: column;
+   padding: 0 .8rem;
+   height: 50px;
+   box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 24px;
+   background-color: var(--pure-white);
+}
+
+.topHeader {
+   width: 100vw;
+   display: flex;
+   justify-content: space-between;
+}
