@@ -23,6 +23,14 @@ export default function ThemeSwitch() {
       window.__setPreferredTheme(theme)
    }, [theme])
 
+   const changeTheme = () => {
+      if (theme === "light") {
+         setTheme("dark")
+      } else if (theme === "dark") {
+         setTheme("light")
+      }
+   }
+
    return (
       <fieldset className={styles.themeSwitch}>
          <legend id='legendTheme' className={styles.legend}></legend>
@@ -30,13 +38,7 @@ export default function ThemeSwitch() {
             <div
                id='sliderButton'
                className={`${styles.slider} slider`}
-               onClick={() => {
-                  if (theme === "light") {
-                     setTheme("dark")
-                  } else if (theme === "dark") {
-                     setTheme("light")
-                  }
-               }}
+               onClick={() => changeTheme()}
             >
             </div>
             <div className={styles.icons}>
@@ -73,7 +75,7 @@ const customScript = `
    // legendThemeEl.textContent = window.__theme
    // console.log(sliderButton)
    // sliderButton.addEventListener("click", () => {
-   //    if ()
+   //    console.log("Olá mundo!")
    // })
 
    var preferredTheme;

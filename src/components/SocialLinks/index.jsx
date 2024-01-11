@@ -20,7 +20,8 @@ export default function SocialLinks() {
 
    return (
       <fieldset
-         className={styles.socialLinks}>
+         className={styles.socialLinks}
+      >
          <legend className={styles.legend}>{legend}</legend>
          <SocialIcon
             icon={<LinkedinIcon className={`${styles.linkedin} icon`} />}

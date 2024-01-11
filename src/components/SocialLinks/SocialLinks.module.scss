@@ -1,7 +1,8 @@
 .socialLinks {
    display: flex;
    justify-content: space-between;
-   gap: 1rem;
+   align-items: center;
+   // gap: 1rem;
    padding: 10px 15px;
    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
    border: 1px solid #d3d3d3;
@@ -48,5 +49,9 @@
 @media screen and (max-width: 768px) {
    .socialLinks {
       flex-grow: 1.5;
+   }
+
+   .legend {
+      margin-left: calc(50% - 35px - 8px);
    }
 }
