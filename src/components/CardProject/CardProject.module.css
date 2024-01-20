@@ -3,7 +3,7 @@
    flex-direction: column;
    text-align: center;
    /* min-width: 310px; */
-   height: 650px;
+   height: 550px;
    font-size: 18px;
    background: var(--pure-white);
    display: flex;
@@ -107,29 +107,26 @@
    pointer-events: initial;
 }
 
-@media screen and (min-width: 769px) {
-   @media (hover: hover) {
-      .stackButton:hover {
-         background-color: var(--primary-color);
-         transition: .5s;
-         border: none;
-      }
+@media (hover: hover) {
+   .stackButton:hover {
+      background-color: var(--primary-color);
+      transition: .5s;
+      border: none;
+   }
+
+   .stackButton:hover::after {
+      content: "";
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid var(--pure-white);
+      position: absolute;
+   }
+
+   .stackButton:hover span {
+      color: var(--pure-white);
    }
 }
-
-@media screen and (min-width: 769px) {
-   @media (hover: hover) {
-      .stackButton:hover::after {
-         content: "";
-         width: 32px;
-         height: 32px;
-         border-radius: 50%;
-         border: 1.5px solid var(--pure-white);
-         position: absolute;
-      }
-   }
-}
-
 
 .stackButton:active {
    background-color: var(--primary-color);
@@ -148,14 +145,6 @@
    color: var(--pure-white);
 }
 
-@media screen and (min-width: 769px) {
-   @media (hover: hover) {
-      .stackButton:hover span {
-         color: var(--pure-white);
-      }
-   }
-}
-
 .projectDetails {
    background-color: var(--primary-color);
    color: var(--pure-white);
@@ -166,7 +155,7 @@
    width: 90%;
    min-height: 65%;
    right: 5px;
-   bottom: 25%;
+   bottom: 30%;
    padding: 1rem;
    border-radius: 1rem 1rem 1rem 0;
    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;

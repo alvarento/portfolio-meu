@@ -1,0 +1,39 @@
+@import '../../app/globalVariables';
+
+.aboutItem {
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   text-align: left;
+   gap: .5rem;
+
+   &:nth-child(5) {
+      position: relative;
+
+      a {
+         position: relative;
+
+         &::after {
+            content: " ";
+            width: 25%;
+            height: 2px;
+            border-radius: 1rem;
+            background-color: $primary-color;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: .5s ease-in-out;
+         }
+
+         &:active::after {
+            width: 100%;
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 769px) {
+   .aboutItem:nth-child(5) a:hover::after {
+      width: 100%;
+   }
+}

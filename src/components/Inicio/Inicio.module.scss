@@ -1,0 +1,162 @@
+@import '../../app/globalVariables';
+
+.home {
+   // min-height: 100vh;
+   min-height: 750px;
+   width: 100%;
+   display: flex;
+   align-items: flex-start;
+   background-image: url('../../assets/images/bg-light-image.jpg');
+   background-size: 100vh;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+   overflow: hidden;
+   padding-top: 110px;
+   background-attachment: fixed;
+
+   .banner {
+      background-color: rgba($color: #ffffff, $alpha: 0.4);
+      position: relative;
+      top: 30px;
+      width: 100%;
+      height: 70%;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      .homeContent {
+         // background-color: #007AFF;
+         height: 50%;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         font-size: 1.8rem;
+
+         .greetingText {
+            font-size: 2.2rem;
+            margin-bottom: 5rem;
+         }
+
+         .title {
+            font-size: 3.8rem;
+            background: linear-gradient(45deg, #211b15 0%, #007AFF 50%, #d3d3d3 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+         }
+
+         .subTitle {
+            min-width: 290px;
+            display: inline-block;
+            /* width: fit-content; */
+            font-size: 2rem;
+            letter-spacing: 1px;
+            // border-bottom: 1px solid var(--border-color);
+         }
+
+         .rodape {
+            margin-top: 2rem;
+         }
+      }
+
+      .homeImage {
+         height: 100%;
+         /* min-width: fit-content; */
+         display: flex;
+         justify-content: flex-end;
+         /* background-color: aqua; */
+         // border: 1px solid red;
+
+         .perfilImage {
+            position: relative;
+            top: -25px;
+         }
+      }
+   }
+}
+
+// .homeContent p {
+//    font-size: 2.2rem;
+// }
+
+
+
+@keyframes degrade {
+   0% {
+      background-position-x: 0%;
+   }
+
+   100% {
+      background-position: 400%;
+   }
+}
+
+
+@media screen and (max-width: 768px) {
+   .home {
+      .banner {
+         flex-direction: column-reverse;
+         background-color: transparent;
+
+         .homeContent {
+            font-size: 1.6rem;
+
+            .title {
+               font-size: 3.3rem;
+            }
+         }
+
+         .homeImage {
+            .perfilImage {
+               $proportion: 0.20;
+               width: calc($profile-image-width * $proportion);
+               height: calc($profile-image-height * $proportion);
+            }
+         }
+      }
+   }
+
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+   .home {
+      padding-top: 200px;
+      min-height: 1100px;
+
+      .banner {
+         flex-direction: column-reverse;
+         // background-color: transparent;
+
+         // .homeContent {
+         //    margin-top: 5rem;
+         //    font-size: 2.8rem;
+
+         //    .greetingText {
+         //       font-size: 3.3rem;
+         //    }
+
+         //    .title {
+         //       font-size: 6rem;
+         //    }
+
+         //    .subTitle {
+         //       font-size: 3.5rem;
+         //    }
+         // }
+
+
+         .homeImage {
+            .perfilImage {
+               // width: 253.88px;
+               /*1154*/
+               $proportion: 0.28;
+               width: calc($profile-image-width * $proportion);
+               height: calc($profile-image-height * $proportion);
+               /*1044*/
+            }
+         }
+      }
+   }
+}

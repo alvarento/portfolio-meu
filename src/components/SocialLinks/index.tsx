@@ -1,0 +1,43 @@
+"use client"
+
+import styles from './SocialLinks.module.scss';
+
+import SocialIcon from '../SocialIcon';
+import { GithubIcon, LinkedinIcon, VitrinedevIcon } from '../svgs';
+
+import { useState } from 'react';
+
+export default function SocialLinks() {
+   const [legend, setLegend] = useState("Minhas Redes")
+
+   const changeLegend = (legend: string) => {
+      setLegend(legend)
+   }
+
+
+   return (
+      <fieldset
+         className={styles.socialLinks}
+      >
+         <legend className={styles.legend}>{legend}</legend>
+         <SocialIcon
+            icon={<LinkedinIcon className={`${styles.linkedin} icon`} />}
+            socialMidia="Linkedin"
+            changeLegend={changeLegend}
+            href="https://www.linkedin.com/in/alvaronascimento-dev"
+         />
+         <SocialIcon
+            icon={<GithubIcon className={`${styles.github} icon`}/>}
+            socialMidia="Github"
+            changeLegend={changeLegend}
+            href="https://github.com/alvaronascimento-dev"
+         />
+         <SocialIcon
+            icon={<VitrinedevIcon className={`${styles.vitrinedev} icon`} />}
+            socialMidia="Vitrinedev"
+            changeLegend={changeLegend}
+            href="https://cursos.alura.com.br/vitrinedev/alvaronascimento-dev"
+         />
+      </fieldset>
+   )
+}

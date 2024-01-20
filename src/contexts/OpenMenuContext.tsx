@@ -1,10 +1,10 @@
 'use client'
 
-import { createContext, useState } from "react";
+import { MouseEventHandler, createContext, useState } from "react";
 
 type IsOpenContextProps = {
    isOpen: boolean,
-   changeOpening: () => void;
+   changeOpening: MouseEventHandler;
 }
 
 export const IsOpenMenuContext = createContext<IsOpenContextProps>({} as IsOpenContextProps)
@@ -12,7 +12,7 @@ export const IsOpenMenuContext = createContext<IsOpenContextProps>({} as IsOpenC
 export function IsOpenMenuContextProvider({ children, }: { children: React.ReactNode }) {
    const [isOpen, setIsOpen] = useState<boolean>(false)
 
-   const changeOpening = () => setIsOpen(prev => !prev)
+   const changeOpening: MouseEventHandler = () => setIsOpen(prev => !prev)
 
    return (
       <IsOpenMenuContext.Provider value={{ isOpen, changeOpening }}>

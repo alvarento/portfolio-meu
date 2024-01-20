@@ -1,8 +1,9 @@
 import styles from './MenuMobile.module.scss';
 
-import { IsOpenMenuContext, IsOpenMenuContextProvider } from '@/contexts/OpenMenuContext';
 import ThemeSwitch from '../ThemeSwitch';
 import SocialLinks from '../SocialLinks';
+import { IsOpenMenuContext } from '@/contexts/OpenMenuContext';
+
 import { useContext } from 'react';
 
 export default function MenuMobile() {

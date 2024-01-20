@@ -7,23 +7,19 @@
    margin-left: 2.5rem;
 }
 
+@media (hover: hover) {
+   .skillList:hover> :not(:hover) {
+      opacity: .2 !important;
+      filter: blur(.1px);
+      transform: scale(0.9) !important;
+   }
+}
+
 @media screen and (max-width: 768px) {
    .skillList {
-      margin-left: 0;
-   }
-}
-
-@media screen and (min-width: 769px) {
-   @media (hover: hover) {
-      .skillList:hover> :not(:hover) {
-         opacity: .2 !important;
-         filter: blur(.1px);
-         transform: scale(0.9) !important;
+         margin-left: 0;
       }
-   }
-}
 
-@media screen and (max-width: 768px) {
    .skillList:active> :not(:active) {
       opacity: .2 !important;
       filter: blur(.1px);

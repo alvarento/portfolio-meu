@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import styles from './BurgerMenu.module.scss';
 import { IsOpenMenuContext } from '@/contexts/OpenMenuContext';
 
@@ -28,7 +28,7 @@ export default function BurguerMenu() {
             `${styles.burgerMenu}
             ${isOpen ? styles["open"] : ""}
          `}
-         onClick={() => changeOpening()}
+         onClick={changeOpening}
       >
          <span></span>
          <span></span>

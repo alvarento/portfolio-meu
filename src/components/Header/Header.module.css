@@ -17,3 +17,12 @@
    /* background-color: transparent; */
    /* background-color: red; */
 }
+
+@media screen and (max-width: 1279px) {
+   .header {
+      height: 150px;
+      align-items: baseline;
+      padding-top: 15px;
+   }
+}
+   
