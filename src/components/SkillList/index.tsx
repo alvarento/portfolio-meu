@@ -1,16 +1,17 @@
 'use client'
 
-import styles from './SkillList.module.css';
+import styles from './SkillList.module.scss';
 
-import SkillCard from '../SkillCard';
 import AlternativeText from '../AlternativeText';
 
 import { useEffect, useState } from 'react';
+import CircleTempleteIcon from '../CircleTempleteIcon';
+import SkillCard from '../SkillCard';
 
 interface SkillType {
    name: string,
    srcIcon: string
-} 
+}
 
 const skillsMock: SkillType[] = [
    {
@@ -58,13 +59,16 @@ export default function SkillList() {
       <ul className={styles.skillList}>
          {
             skills.length > 0 ?
-               skills.map((skill) =>
-                  <SkillCard
-                     key={skill.name}
-                     name={skill.name}
-                     srcIcon={skill.srcIcon}
-                  />) :
-               <AlternativeText imageSrc="/images/skills-build.png"/>
+               skills.map((skill) => {
+                  const { name, srcIcon } = skill
+                  return <SkillCard
+                     key={name}
+                     name={name}
+                     srcIcon={srcIcon}
+                  // proportion={1.2}
+                  />
+               }) :
+               <AlternativeText imageSrc="/images/skills-build.png" />
          }
       </ul>
    )

@@ -14,7 +14,7 @@
          "name": "project 2 e este e o seu titulo sadvsdv dfgsgfdgfds fbsdfb ajkksd aihoipdhga iafobi8hao oinhoifdhoi oihndog",
          "image": "https://cdn.pixabay.com/photo/2017/09/25/11/55/cyberspace-2784907_640.jpg",
          "description": "Este é o projeto 2",
-         "deploy": "",
+         "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
          "stacks": []
       },
@@ -94,19 +94,27 @@
    "skills": [
       {
          "name": "HTML",
-         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-plain.svg"
       },
       {
          "name": "CSS",
-         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg"
       },
       {
          "name": "JavaScript",
-         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg"
       },
       {
          "name": "NodeJS",
-         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg"
+      },
+      {
+         "name": "TypeScript",
+         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-plain.svg"
+      },
+      {
+         "name": "ExpressJS",
+         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
       },
       {
          "name": "MySQL",
@@ -119,26 +127,6 @@
       {
          "name": "NextJS",
          "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
-      },
-      {
-         "name": "HTML",
-         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-      },
-      {
-         "name": "HTML",
-         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-      },
-      {
-         "name": "HTML",
-         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-      },
-      {
-         "name": "HTML",
-         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-      },
-      {
-         "name": "HTML",
-         "srcIcon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
       }
    ]
 }

@@ -66,42 +66,54 @@ export default function ThemeSwitch() {
 
 const customScript = `
   (function () {
-   function setTheme(newTheme) {
-      window.__theme = newTheme;
-      if (newTheme === 'dark') {
-         document.documentElement.classList.add('dark');
-      } else if (newTheme === 'light') {
-         document.documentElement.classList.remove('dark');
+      function setTheme(newTheme) {
+         window.__theme = newTheme;
+         if (newTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+         } else if (newTheme === 'light') {
+            document.documentElement.classList.remove('dark');
+         }
       }
-   }
 
-   var preferredTheme;
-   try {
-      preferredTheme = localStorage.getItem('theme');
-   } catch (err) { }
-
-   window.__setPreferredTheme = function(newTheme) {
-      preferredTheme = newTheme;
-      setTheme(newTheme);
+      var preferredTheme;
       try {
-         localStorage.setItem('theme', newTheme);
+         preferredTheme = localStorage.getItem('theme');
       } catch (err) { }
-   };
 
-   var initialTheme = preferredTheme;
+      window.__setPreferredTheme = function(newTheme) {
+         preferredTheme = newTheme;
+         setTheme(newTheme);
+         try {
+            localStorage.setItem('theme', newTheme);
+         } catch (err) { }
+      };
 
-   if (!initialTheme) {
-      initialTheme = "light";
-   }
+      var initialTheme = preferredTheme;
 
-   setTheme(initialTheme);
+      const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const userSystemTheme = isDarkTheme ? "dark" : "light";
+      
+      if (!initialTheme) initialTheme = userSystemTheme;
 
-   // Detect whether the browser is Mac to display platform specific content
-   // An example of such content can be the keyboard shortcut displayed in the search bar
-   document.documentElement.classList.add(
-         window.navigator.platform.includes('Mac')
-         ? "platform-mac"
-         : "platform-win"
-   );
+      setTheme(initialTheme);
+
+      function isMobile() {
+         if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)
+         ) {
+            return true;
+         }
+         else {
+            return false;
+         }
+      }
+
+      document.documentElement.classList.add(isMobile() ? "mobile" : "computer");
+
    })();
   `

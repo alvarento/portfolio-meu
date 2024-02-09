@@ -3,7 +3,7 @@
 import styles from './SocialLinks.module.scss';
 
 import SocialIcon from '../SocialIcon';
-import { GithubIcon, LinkedinIcon, VitrinedevIcon } from '../svgs';
+import { GithubIcon, LinkedinIcon, VitrinedevIcon, MediumIcon } from '../svgs';
 
 import { useState } from 'react';
 
@@ -31,6 +31,12 @@ export default function SocialLinks() {
             socialMidia="Github"
             changeLegend={changeLegend}
             href="https://github.com/alvaronascimento-dev"
+         />
+         <SocialIcon
+            icon={<MediumIcon className={`${styles.medium} icon`} />}
+            socialMidia="Medium (Blog)"
+            changeLegend={changeLegend}
+            href="https://medium.com/@alvaronascimento-dev"
          />
          <SocialIcon
             icon={<VitrinedevIcon className={`${styles.vitrinedev} icon`} />}

@@ -5,11 +5,14 @@ $bg-light-color: #f1f3f3;
 $text-light-color: #1b1c1e;
 $primary-color: #007aff;
 $border-color: #d3d3d3;
+$bg-banner-light-color: rgba($color: $bg-light-color, $alpha: 0.4);
+
 
 $bg-dark-color: #24282b;
 $text-dark-color: #f1f3f3;
 $bg-dark-header-color: #212121;
 $bg-dark-card-color: #343434;
+$bg-banner-dark-color: rgba($color: $bg-dark-header-color, $alpha: 0.4);
 
 $profile-image-width: 1154px;
 $profile-image-height: 1044px;

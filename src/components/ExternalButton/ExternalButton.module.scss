@@ -1,0 +1,91 @@
+@import '../../app/globalVariables';
+
+.externalButton {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   /* background-color: red; */
+
+   &::before {
+      content: " ";
+      background-color: var(--primary-color);
+      width: 0;
+      height: 100%;
+      position: absolute;
+      border-radius: 1rem;
+      transition: all .3s;
+      right: 0;
+   }
+
+   .icon {
+      position: relative;
+      top: 2px;
+   }
+}
+
+:global(.computer) {
+
+   .externalButton {
+
+      &:hover {
+         border: none;
+
+         &::before {
+            width: 100%;
+         }
+
+         .icon {
+            z-index: 1;
+
+            path {
+               fill: $pure-white;
+            }
+         }
+      }
+   }
+}
+
+
+:global(.mobile) {
+
+   .externalButton {
+
+      &:active {
+         border: none;
+
+         &::before {
+            width: 100%;
+         }
+
+         .icon {
+            z-index: 1;
+
+            path {
+               fill: $pure-white;
+            }
+         }
+      }
+   }
+}
+
+/* .externalButton:hover .icon path {
+   stroke: var(--pure-white);
+   display: none;
+} */
+
+// .externalButton .icon {
+//    position: relative;
+//    top: 10px;
+// }
+
+// .externalButton:hover .icon path {
+//    fill: var(--pure-white);
+// }
+
+// .externalButton:hover .icon {
+//    z-index: 1;
+// }
+
+// .externalButton:active::before {
+//    width: 100%;
+// }

@@ -16,6 +16,7 @@ import { FolderIcon } from '../svgs'
 import { useEffect, useState } from 'react';
 
 interface ProjectType {
+   id: string
    name: string,
    image: string,
    description: string,
@@ -26,6 +27,7 @@ interface ProjectType {
 
 const projectsMock: ProjectType[] = [
    {
+      id: "1",
       name: "project 1",
       image: "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
       description: "Este é o projeto 1",
@@ -34,6 +36,7 @@ const projectsMock: ProjectType[] = [
       stacks: []
    },
    {
+      id: "2",
       name: "project 2 e este e o seu titulo sadvsdv dfgsgfdgfds fbsdfb ajkksd aihoipdhga iafobi8hao oinhoifdhoi oihndog",
       image: "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
       description: "Este é o projeto 2",
@@ -42,6 +45,7 @@ const projectsMock: ProjectType[] = [
       stacks: []
    },
    {
+      id: "3",
       name: "project 3",
       image: "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
       description: "Este é o projeto 3",
@@ -54,6 +58,7 @@ const projectsMock: ProjectType[] = [
       ]
    },
    {
+      id: "4",
       name: "project 3",
       image: "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
       description: "Este é o projeto 3",
@@ -66,6 +71,7 @@ const projectsMock: ProjectType[] = [
       ]
    },
    {
+      id: "5",
       name: "project 3",
       image: "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
       description: "Este é o projeto 3",
@@ -78,6 +84,7 @@ const projectsMock: ProjectType[] = [
       ]
    },
    {
+      id: "6",
       name: "project 4",
       image: "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
       description: "Este é o projeto 4",
@@ -112,24 +119,24 @@ const projectsMock: ProjectType[] = [
 ]
 
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ projects }: any) {
 
-   const [projects, setProjects] = useState<ProjectType[]>([])
+   // const [projects, setProjects] = useState<ProjectType[]>([])
 
-   useEffect(() => {
-      async function fetchProjects() {
-         try {
-            const response = await fetch('http://localhost:8080/projects');
-            const projects: ProjectType[] = await response.json()
-            setProjects(projects)
+   // useEffect(() => {
+   //    async function fetchProjects() {
+   //       try {
+   //          const response = await fetch('http://localhost:8080/projects');
+   //          const projects: ProjectType[] = await response.json()
+   //          setProjects(projects)
 
-         } catch (error) {
-            setProjects(projectsMock)
-            return;
-         }
-      }
-      fetchProjects();
-   }, [])
+   //       } catch (error) {
+   //          setProjects(projectsMock)
+   //          return;
+   //       }
+   //    }
+   //    fetchProjects();
+   // }, [])
 
    const hideSwiperButton = (swiper: any) => {
       const navNext = swiper.navigation.nextEl
@@ -169,7 +176,7 @@ export default function ProjectsSection() {
             }}
          >
             {projects.length > 0 ?
-               projects.map((project, index) => <SwiperSlide key={index}>{<CardPorject project={project} />}</SwiperSlide>) : <AlternativeText imageSrc="/images/projects-build.png" />
+               projects.map((project: any, index: any) => <SwiperSlide key={index}>{<CardPorject project={project} />}</SwiperSlide>) : <AlternativeText imageSrc="/images/projects-build.png" />
             }
          </Swiper>
       </section>

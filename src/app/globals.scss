@@ -53,7 +53,7 @@ body {
 .dark {
 
   body {
-    background: radial-gradient(circle at center center, #24282b, #24282b), repeating-radial-gradient(circle at center center, #d3d3d3, #d3d3d3, 4px, transparent 8px, transparent 4px);
+    background: radial-gradient(circle at center center, $bg-dark-color, $bg-dark-color), repeating-radial-gradient(circle at center center, #d3d3d3, #d3d3d3, 4px, transparent 8px, transparent 4px);
     background-blend-mode: multiply;
   }
 
@@ -124,7 +124,7 @@ body {
     background-image: url('../assets/images/bg-dark-image.png');
 
     .banner {
-      background-color: rgba($color: $bg-dark-header-color, $alpha: 0.4);
+      background-color: $bg-banner-dark-color;
     }
   }
 }
@@ -242,6 +242,12 @@ body {
     .home {
       .banner {
         background-color: transparent;
+      }
+    }
+
+    .apresentation {
+      &::before {
+        background-color: $bg-banner-dark-color !important;
       }
     }
   }

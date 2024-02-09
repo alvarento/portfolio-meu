@@ -1,10 +1,7 @@
-import styles from './ExternalButton.module.css';
-
-
-import { ExternalLinkIcon, CodeIcon, WebIcon } from '../svgs';
+import styles from './ExternalButton.module.scss';
 
 interface ExternalButtonProps {
-   externalLink: string,
+   externalLink?: string,
    textButton: string,
    typeIcon: React.ReactNode
 }

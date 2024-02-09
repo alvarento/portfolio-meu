@@ -5,6 +5,8 @@ import styles from './Inicio.module.scss';
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
 import Image from 'next/image';
+import { TemplateContext } from 'next/dist/shared/lib/app-router-context.shared-runtime';
+import CircleTempleteIcon from '../CircleTempleteIcon';
 
 export default function Inicio() {
 
@@ -20,15 +22,19 @@ export default function Inicio() {
          <div className={`${styles.banner} banner`}>
             <div className={styles.homeContent}>
                <p className={styles.greetingText}>Olá, boas vindas ao meu espaço pessoal!</p>
-               <div>
+               <div className={`${styles.apresentation} apresentation`}>
                   Eu sou,
                   <h1 className={styles.title}>Álvaro Nascimento</h1>
                   <h2 className={styles.subTitle}>Desenvolvedor {text}<Cursor /></h2>
-                  <p className={styles.rodape}>Aqui compartilho meus projetos pessoais.</p>
                </div>
+               <p className={styles.rodape}>Aqui compartilho meus projetos pessoais.</p>
             </div>
 
             <div className={styles.homeImage}>
+               {/* <CircleTempleteIcon
+                  srcIcon='/images/foto-perfil.jpg'
+                  proportion={5}
+               /> */}
                <Image
                   className={styles.perfilImage}
                   src="/images/foto-perfil-3.png"

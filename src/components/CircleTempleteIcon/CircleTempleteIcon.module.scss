@@ -1,0 +1,60 @@
+@import '../../app/globalVariables';
+
+$proportion: var(--proportionElement);
+
+.templeteContainer {
+   // background-color: red;
+   position: relative;
+   width: fit-content;
+   height: calc(104px * $proportion); //104
+   cursor: pointer;
+}
+
+.nameCircle {
+   $size: calc(78px * $proportion);
+   height: $size;
+   width: $size;
+   background: linear-gradient(45deg, #211b15 0%, #007AFF 50%, #d3d3d3 100%);
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.nameCircle span {
+   $fontSize: calc(1.15rem * $proportion);
+   font-size: $fontSize;
+   color: var(--pure-white);
+}
+
+.iconCircle {
+   // background: var(--pure-white);
+   // background: local;
+   $size: calc(52px * $proportion);
+   height: $size;
+   width: $size;
+   outline: 1px solid var(--primary-color);
+   outline-offset: 2px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   position: absolute;
+   left: 50%;
+   bottom: 5%;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.iconCircle img {
+   $size: calc(30px * $proportion);
+   width: $size;
+   height: $size;
+   // background-color: red;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 1rem;
+   // object-fit: cove;
+}

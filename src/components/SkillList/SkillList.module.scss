@@ -5,17 +5,27 @@
    column-gap: 6rem;
    margin-top: 5rem;
    margin-left: 2.5rem;
+   /* margin-right: 2.5rem; */
 }
 
-@media (hover: hover) {
+/* .skillList {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 5rem;
+   margin-left: 2.5rem;
+   margin-top: 2.5rem;
+} */
+
+:global(.computer) {
    .skillList:hover> :not(:hover) {
       opacity: .2 !important;
       filter: blur(.1px);
       transform: scale(0.9) !important;
    }
+
 }
 
-@media screen and (max-width: 768px) {
+:global(.mobile) {
    .skillList {
          margin-left: 0;
       }

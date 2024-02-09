@@ -1,14 +1,19 @@
+'use client'
+
 /* eslint-disable react/prop-types */
-import styles from './CardProject.module.css';
+import styles from './CardProject.module.scss';
 
 import ExternalButton from '../ExternalButton';
 
-import { CodeIcon, WebIcon } from '../svgs';
+import { CodeIcon, WebIcon, PreviewIcon } from '../svgs';
 
 import { useSwiper } from 'swiper/react';
-import { useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
+import ProjectPreview from '../ProjectPreview';
+import { IsModalOpenContext, IsModalOpenContextProvider } from '@/contexts/OpenModalContext';
 
 interface projectType {
+   id: string
    image: string,
    name: string,
    description: string,
@@ -17,14 +22,16 @@ interface projectType {
    repository: string
 }
 
-interface CardProjectProps {
+export interface CardProjectProps {
    project: projectType
 }
 
 export default function CardPorject({ project }: CardProjectProps) {
-   
+
+   const { isModalOpen, changeModalOpening } = useContext(IsModalOpenContext)
+
    const projectDetails = useRef<HTMLDivElement>(null);
-   
+
 
 
    const swiper = useSwiper();
@@ -44,51 +51,63 @@ export default function CardPorject({ project }: CardProjectProps) {
       buttonPrev.style.opacity = '1';
    }
 
-   const { image, name, description, stacks, deploy, repository } = project
+   const { id, image, name, description, stacks, deploy, repository } = project
 
+   // console.log(id)
+
+   const projectImage = { "--projectImage": image } as React.CSSProperties;
 
    return (
-      <div className={`${styles.swiperSlide} cardProject`}>
-         <div className={styles.img} style={{ backgroundImage: `url(${image})` }}></div>
-         <div className={styles.projectDescription}>
-            <div className={styles.projectText}>
-               <h2 className={styles.projectName}>{name}</h2>
-               <span className={styles.descriptionText}>{description}</span>
+      <>
+
+         <div id={id} data-id={id} className={`${styles.swiperSlide} cardProject`} style={projectImage}>
+            <div className={styles.previewContainer}>
+               <div className={styles.img} style={{ backgroundImage: `url(${image})` }}></div>
+               <button
+                  className={styles.previewButton}
+                  onClick={changeModalOpening}
+               >
+               </button>
             </div>
-            <div className={styles.projectDetails} data-project-name="${name}" ref={projectDetails}>
-               <h2>Detalhes do Projeto</h2>
-               <div className={styles.stackListContainer}>
-                  <p className={styles.stackListTitle}>Stack do projeto :</p>
-                  <ul className={styles.stackList}>
-                     {stacks.map((stack, index) => <li className={styles.stack} key={index}>{stack}</li>)}
-                  </ul>
+            <div className={styles.projectDescription}>
+               <div className={styles.projectText}>
+                  <h2 className={styles.projectName}>{name}</h2>
+                  <span className={styles.descriptionText}>{description}</span>
+               </div>
+               <div className={styles.projectDetails} data-project-name="${name}" ref={projectDetails}>
+                  <h2>Detalhes do Projeto</h2>
+                  <div className={styles.stackListContainer}>
+                     <p className={styles.stackListTitle}>Stack do projeto :</p>
+                     <ul className={styles.stackList}>
+                        {stacks.map((stack, index) => <li className={styles.stack} key={index}>{stack}</li>)}
+                     </ul>
+                  </div>
+               </div>
+               <div className={styles.buttons}>
+                  {stacks.length > 0 &&
+                     <div
+                        className={styles.stackButton}
+                        onMouseOver={showProjectsDetails}
+                        onMouseOut={hideProjectsDetails}
+                     >
+                        <span>i</span>
+                     </div>}
+
+                  {deploy.length > 0 &&
+                     <ExternalButton
+                        externalLink={deploy}
+                        textButton="Demo"
+                        typeIcon={<WebIcon />}
+                     />}
+
+                  <ExternalButton
+                     externalLink={repository}
+                     textButton="Código"
+                     typeIcon={<CodeIcon />}
+                  />
                </div>
             </div>
-            <div className={styles.buttons}>
-               {stacks.length > 0
-                  ? <div
-                     className={styles.stackButton}
-                     onMouseOver={showProjectsDetails}
-                     onMouseOut={hideProjectsDetails}
-                  >
-                     <span>i</span>
-                  </div>
-                  : ""}
-
-               {deploy.length > 0 ?
-                  <ExternalButton
-                     externalLink={deploy}
-                     textButton="Demo"
-                     typeIcon={<WebIcon/>}
-                  /> : ""}
-
-               <ExternalButton
-                  externalLink={repository}
-                  textButton="Código"
-                  typeIcon={<CodeIcon/>}
-               />
-            </div>
-         </div>
-      </div>
+         </div >
+      </>
    )
 }

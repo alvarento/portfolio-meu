@@ -1,0 +1,113 @@
+@import '../../app/globalVariables';
+
+.modalContainer {
+   // position: relative;
+   width: 100vw;
+   height: 100vh;
+   // width: 1200px;
+   // height: 500px;
+   background: rgba($color: #000000, $alpha: 0.5);
+   // background-color: red;
+   position: fixed;
+   top: 0px;
+   left: 0px;
+   z-index: 100;
+   display: none;
+   justify-content: center;
+   align-items: center;
+
+
+   .modal {
+      position: relative;
+      width: 75%;
+      // width: 100%;
+      height: 65%;
+      // background-size: contain;
+      background-size: cover;
+      background-position: 100% 0%;
+      // background-attachment: scroll;
+      transition: 20s;
+      // transition
+      // overflow: auto;
+      // border-radius: 1rem 1rem 0 0;
+      border-radius: 1rem;
+      border: 2px solid $primary-color;
+      // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      cursor: url('../../assets/icons/preview-blue.svg'), auto;
+      // cursor: ;
+      // overflow: scroll;
+      // background-color: red;
+      // background-image: url(var(--projectImage));
+      // scroll-behavior: smooth;
+
+      &:hover {
+         // background-position: 100% 100%;
+         animation: modalAnimation 20s ease-in-out forwards;
+      }
+
+      @keyframes modalAnimation {
+         0% {
+            background-position: 100% 0%;
+         }
+         
+
+         50% {
+            background-position: 100% 100%;
+         }
+
+         100% {
+            background-position: 100% 0%;
+         }
+      }
+
+      // .insideModal {
+      //    position: absolute;
+      //    // overflow: scroll;
+      //    background-color: red;
+      //    height: 90%;
+      //    width: 90%;
+      // }
+
+      // img {
+      //    position: absolute;
+      //    object-fit: cover;
+      //    // object-position: top;
+      // }
+
+      // img:hover {
+      //    object-position: bottom;
+      //    background-position: 100% 0%;
+      // }
+
+      .closeButton {
+         position: absolute;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         top: -10px;
+         right: -10px;
+         width: 40px;
+         height: 40px;
+         border-radius: 1rem;
+         font-weight: 900;
+         font-size: 1.8rem;
+         background-color: $primary-color;
+         color: $pure-white;
+         outline: 2px solid $pure-white;
+         outline-offset: -4px;
+         box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+         cursor: pointer;
+      }
+   }
+
+}
+
+.modalContainer.show {
+   display: flex;
+}
+
+// .modal:hover {
+//    background-attachment: scroll;
+//    background-position: 100% 100%;
+// }
