@@ -6,7 +6,8 @@ export default function Logo() {
    return (
       <a className={`${styles.logo} icon logo`}>
          <LogoIcon />
-         <span>alvaroNascimento-dev</span>
+         <span className={styles.logoName}>alvarento</span>
+         <span className={styles.slogan}>apegado a tecnologia</span>
       </a>
    )
 }

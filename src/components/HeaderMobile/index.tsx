@@ -16,16 +16,17 @@ export default function HeaderMobile() {
    const headerMobileRef = useRef<HTMLElement>(null)
 
    useEffect(() => {
+      const headerMobile = headerMobileRef.current;
+      
       window.addEventListener('scroll', () => {
-         const headerMobile = headerMobileRef.current
-         window.scrollY > 0 ? headerMobile!.classList.add('scrolling') : '';
-         window.scrollY < 1 ? headerMobile!.classList.remove('scrolling') : '';
+            window.scrollY > 0 ? headerMobile?.classList.add('scrolling') : '';
+            window.scrollY < 1 ? headerMobile?.classList.remove('scrolling') : '';
       })
    }, [])
 
    return (
       <IsOpenMenuContextProvider>
-         <header ref={headerMobileRef} className={`${styles.headerMobile} headerMobile`} id='headerMobile'>
+         <header id='headerMobile' ref={headerMobileRef} className={`${styles.headerMobile} headerMobile`}>
             <div className={styles.topHeader}>
                <Logo />
                <BurguerMenu />

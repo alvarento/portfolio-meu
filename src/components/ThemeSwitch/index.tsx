@@ -3,11 +3,18 @@
 import Image from 'next/image';
 import styles from './ThemeSwitch.module.css'
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback, memo } from 'react';
+import Curriculo from '@/app/curriculo/page';
 
-export default function ThemeSwitch() {
+function ThemeSwitch() {
 
-   // console.log("Renderizou componente de Theme")
+   const renders = useRef<number>(0);
+
+   useEffect(() => {
+      renders.current = renders.current + 1;
+   });
+
+   console.log(`Renderizou: ThemeSwitch ${renders.current} vezes`);
 
 
    const [theme, setTheme] = useState(() => {
@@ -21,13 +28,13 @@ export default function ThemeSwitch() {
       window.__setPreferredTheme(theme!)
    }, [theme])
 
-   const changeTheme = () => {
+   const changeTheme = useCallback(() => {
       if (theme === "light") {
          setTheme("dark")
       } else if (theme === "dark") {
          setTheme("light")
       }
-   }
+   }, [theme])
 
    return (
       <fieldset className={styles.themeSwitch}>
@@ -62,6 +69,8 @@ export default function ThemeSwitch() {
       </fieldset>
    )
 }
+
+export default memo(ThemeSwitch);
 
 
 const customScript = `
@@ -114,6 +123,10 @@ const customScript = `
       }
 
       document.documentElement.classList.add(isMobile() ? "mobile" : "computer");
+
+      window.__innerWidth = window.innerWidth;
+
+      console.log(window.__ineerWidth)
 
    })();
   `

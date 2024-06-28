@@ -4,6 +4,7 @@
    border-radius: .5rem;
    padding: 1rem 0;
    box-shadow: #007aff 0px 1px 4px, #d3d3d3 0px 0px 0px 3px;
+   min-width: 120px;
 }
 
 .skill img {

@@ -8,23 +8,30 @@ import { useContext, useState } from 'react';
 import { IsModalOpenContext, IsModalOpenContextProvider } from '@/contexts/OpenModalContext';
 import ExternalButton from '../ExternalButton';
 
+import { ProjectType } from '@/app/page';
+
 import { PreviewIcon } from '../svgs';
 
 const ptMono = PT_Mono({ weight: '400', subsets: ['latin'] })
 
 
 interface ProjectPreviewProps {
-   srcImage: string
+   projects: ProjectType[]
 }
 
-export default function ProjectPreview({ projects }: any) {
+export default function ProjectPreview({ projects }: ProjectPreviewProps) {
 
+   const { isModalOpen, projectId, changeModalOpening } = useContext(IsModalOpenContext);
 
-   // const [isModalOpen, setIsModalOpen] = useState(false)
-   const { isModalOpen, projectId, changeModalOpening } = useContext(IsModalOpenContext)
-   // style = {{ backgroundImage: `url(${srcImage})` }}
+   let project;
+   if (isModalOpen) {
+      project = projects.find((project: ProjectType) => {
+         if (project.id === projectId) {
+            return project;
+         }
+      })
+   }
 
-   const project = projects.find((project: any) => project.id === projectId)
 
    return (
       <div id='modal' className={`${styles.modalContainer} ${isModalOpen ? styles["show"] : ""}`}>

@@ -1,7 +1,7 @@
 'use client'
 
 /* eslint-disable react/prop-types */
-import styles from './CardProject.module.scss';
+import styles from './ProjectCard.module.scss';
 
 import ExternalButton from '../ExternalButton';
 
@@ -12,21 +12,13 @@ import { useContext, useEffect, useRef } from 'react';
 import ProjectPreview from '../ProjectPreview';
 import { IsModalOpenContext, IsModalOpenContextProvider } from '@/contexts/OpenModalContext';
 
-interface projectType {
-   id: string
-   image: string,
-   name: string,
-   description: string,
-   stacks: string[],
-   deploy: string,
-   repository: string
+import { ProjectType } from '@/app/page';
+
+interface ProjectCardProps {
+   project: ProjectType
 }
 
-export interface CardProjectProps {
-   project: projectType
-}
-
-export default function CardPorject({ project }: CardProjectProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
 
    const { isModalOpen, changeModalOpening } = useContext(IsModalOpenContext)
 
@@ -37,7 +29,6 @@ export default function CardPorject({ project }: CardProjectProps) {
    const swiper = useSwiper();
    const buttonNext = swiper.navigation.nextEl;
    const buttonPrev = swiper.navigation.prevEl;
-
 
    const showProjectsDetails = () => {
       projectDetails.current!.style.visibility = 'visible';
@@ -51,7 +42,15 @@ export default function CardPorject({ project }: CardProjectProps) {
       buttonPrev.style.opacity = '1';
    }
 
-   const { id, image, name, description, stacks, deploy, repository } = project
+   const { id, image, name, description, stacks, keywords, deploy, repository } = project;
+
+   // console.log(stacks)
+
+   const stacksList = stacks.split(",")
+   const keywordsList = keywords.split(",")
+   // console.log(stacksList)
+   // console.log(keywordsList)
+   // console.log(stacksList.length > 0)
 
    // console.log(id)
 
@@ -59,8 +58,7 @@ export default function CardPorject({ project }: CardProjectProps) {
 
    return (
       <>
-
-         <div id={id} data-id={id} className={`${styles.swiperSlide} cardProject`} style={projectImage}>
+         <div data-id={id} className={`${styles.swiperSlide} cardProject`} style={projectImage}>
             <div className={styles.previewContainer}>
                <div className={styles.img} style={{ backgroundImage: `url(${image})` }}></div>
                <button
@@ -77,14 +75,20 @@ export default function CardPorject({ project }: CardProjectProps) {
                <div className={styles.projectDetails} data-project-name="${name}" ref={projectDetails}>
                   <h2>Detalhes do Projeto</h2>
                   <div className={styles.stackListContainer}>
-                     <p className={styles.stackListTitle}>Stack do projeto :</p>
+                     <p className={styles.stackListTitle}>Stack</p>
                      <ul className={styles.stackList}>
-                        {stacks.map((stack, index) => <li className={styles.stack} key={index}>{stack}</li>)}
+                        {stacksList.map((stack, index) => <li className={styles.stack} key={index}>{stack}</li>)}
+                     </ul>
+                  </div>
+                  <div className={styles.stackListContainer}>
+                     <p className={styles.stackListTitle}>Keywords</p>
+                     <ul className={styles.stackList}>
+                        {keywordsList.map((keyword, index) => <li className={styles.stack} key={index}>{keyword}</li>)}
                      </ul>
                   </div>
                </div>
                <div className={styles.buttons}>
-                  {stacks.length > 0 &&
+                  {(stacksList.length > 0 || keywordsList.length > 0) &&
                      <div
                         className={styles.stackButton}
                         onMouseOver={showProjectsDetails}

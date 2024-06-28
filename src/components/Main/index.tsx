@@ -5,9 +5,13 @@ import ProjectsSection from "../ProjectsSection";
 import Inicio from '../Inicio';
 
 import { ProjectType } from '@/app/page';
-import { CardProjectProps } from '../CardProject';
 
-export default function Main({ projects }: any) {
+interface MainProps {
+   projects: ProjectType[];
+}
+
+
+export default function Main({ projects }: MainProps) {
    return (
       <main id="main" className={styles.main}>
          <Inicio />

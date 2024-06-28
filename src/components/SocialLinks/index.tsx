@@ -24,25 +24,25 @@ export default function SocialLinks() {
             icon={<LinkedinIcon className={`${styles.linkedin} icon`} />}
             socialMidia="Linkedin"
             changeLegend={changeLegend}
-            href="https://www.linkedin.com/in/alvaronascimento-dev"
+            href="https://www.linkedin.com/in/alvarento"
          />
          <SocialIcon
-            icon={<GithubIcon className={`${styles.github} icon`}/>}
+            icon={<GithubIcon className={`${styles.github} icon`} />}
             socialMidia="Github"
             changeLegend={changeLegend}
-            href="https://github.com/alvaronascimento-dev"
+            href="https://github.com/alvarento"
          />
          <SocialIcon
             icon={<MediumIcon className={`${styles.medium} icon`} />}
             socialMidia="Medium (Blog)"
             changeLegend={changeLegend}
-            href="https://medium.com/@alvaronascimento-dev"
+            href="https://medium.com/@alvarento"
          />
          <SocialIcon
             icon={<VitrinedevIcon className={`${styles.vitrinedev} icon`} />}
             socialMidia="Vitrinedev"
             changeLegend={changeLegend}
-            href="https://cursos.alura.com.br/vitrinedev/alvaronascimento-dev"
+            href="https://cursos.alura.com.br/vitrinedev/alvarento"
          />
       </fieldset>
    )

@@ -1,5 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+   images: {
+      remotePatterns: [
+         {
+            hostname: 'images.unsplash.com',
+         },
+         {
+            hostname: 'images.pexels.com'
+         },
+         {
+            hostname: 'img.freepik.com'
+         },
+         {
+            hostname: 'raw.githubusercontent.com'
+         }
+      ]
+   },
    webpack(config) {
       // Grab the existing rule that handles SVG imports
       const fileLoaderRule = config.module.rules.find((rule) =>

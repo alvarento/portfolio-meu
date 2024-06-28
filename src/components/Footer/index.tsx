@@ -23,7 +23,7 @@ export default function Footer() {
             </span>
             <a
                className={styles.authorName}
-               href="https://alvaronascimento.dev"
+               href="https://alvarento.com"
                target="_blank"
                rel="noreferrer"
             >
@@ -33,7 +33,7 @@ export default function Footer() {
          <div className={styles.contactEmail}>
             <EmailIcon className="icon" />
             <span>Entrar em contato</span>
-            <a href="mailto:alvaronascimento.dev@gmail.com" target="_blank" rel="noreferrer">alvaronascimento.dev@gmail.com
+            <a href="mailto:alvarento@hotmail.com" target="_blank" rel="noreferrer">alvarento@hotmail.com
             </a>
          </div>
       </footer>

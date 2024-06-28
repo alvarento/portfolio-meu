@@ -2,8 +2,11 @@
    display: flex;
    justify-content: space-between;
    align-items: center;
-   // gap: 1rem;
-   padding: 10px 15px;
+   flex-wrap: wrap;
+   min-height: calc(72px - 8px);
+   height: fit-content;
+   gap: .5rem;
+   padding: 8px 15px;
    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
    border: 1px solid #d3d3d3;
    border-radius: 1rem;

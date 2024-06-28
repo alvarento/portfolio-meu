@@ -1,26 +1,26 @@
 'use client'
 
-import { MouseEventHandler, createContext, useState } from "react";
+import { ChangeEvent, MouseEvent, MouseEventHandler, createContext, useState } from "react";
 
 type IsModalOpenContextProps = {
-   isModalOpen: boolean
-   projectId: string
+   isModalOpen: boolean;
+   projectId: number | null;
    changeModalOpening: MouseEventHandler;
-}
+};
 
-export const IsModalOpenContext = createContext<IsModalOpenContextProps>({} as IsModalOpenContextProps)
+export const IsModalOpenContext = createContext<IsModalOpenContextProps>({} as IsModalOpenContextProps);
 
 export function IsModalOpenContextProvider({ children, }: { children: React.ReactNode }) {
-   const [isModalOpen, setIsOpen] = useState<boolean>(false)
-   const [projectId, setProjectId] = useState<string>("")
+   const [isModalOpen, setIsOpen] = useState<boolean>(false);
+   const [projectId, setProjectId] = useState<number| null>(null);
 
-   const changeModalOpening = (event: any): void => {
-      setIsOpen((prev) => !prev)
-      console.log(isModalOpen)
-      console.log(event)
-      // console.log(event.target.parentElement.parentElement.id)
-      setProjectId(event.target.parentElement.parentElement.id)
-   }
+   const changeModalOpening = ((event: any): void => {
+      setIsOpen((prev) => !prev);
+      if(!isModalOpen) {
+         setProjectId(Number(event.target.parentElement.parentElement.dataset.id))
+      };
+   });
+
 
    return (
       <IsModalOpenContext.Provider value={{ isModalOpen, projectId, changeModalOpening }}>

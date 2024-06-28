@@ -7,7 +7,8 @@
          "description": "Este é o projeto 1",
          "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": []
+         "stacks": "jest,mysql,nodejs",
+         "keywords": "TDD,DDD"
       },
       {
          "id": "2",
@@ -16,7 +17,8 @@
          "description": "Este é o projeto 2",
          "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": []
+         "stacks": "jest,mysql,nodejs",
+         "keywords": "TDD,DDD"
       },
       {
          "id": "3",
@@ -25,11 +27,8 @@
          "description": "Este é o projeto 3",
          "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": [
-            "jest",
-            "mysql",
-            "nodejs"
-         ]
+         "stacks": "jest,mysql,nodejs",
+         "keywords": "TDD,DDD"
       },
       {
          "id": "4",
@@ -38,11 +37,8 @@
          "description": "Este é o projeto 3",
          "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": [
-            "jest",
-            "mysql",
-            "nodejs"
-         ]
+         "stacks": "jest,mysql,nodejs",
+         "keywords": "TDD,DDD"
       },
       {
          "id": "5",
@@ -51,11 +47,8 @@
          "description": "Este é o projeto 3",
          "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": [
-            "jest",
-            "mysql",
-            "nodejs"
-         ]
+         "stacks": "jest,mysql,nodejs",
+         "keywords": "TDD,DDD"
       },
       {
          "id": "6",
@@ -64,31 +57,8 @@
          "description": "Este é o projeto 4",
          "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": [
-            "javascript",
-            "nodejs",
-            "mongodb",
-            "html",
-            "mysql",
-            "postgres",
-            "typescript",
-            "mongoose",
-            "javascript",
-            "nodejs",
-            "mongodb",
-            "html",
-            "mysql",
-            "postgres",
-            "typescript",
-            "mongoose",
-            "javascript",
-            "nodejs",
-            "mongodb",
-            "html",
-            "mysql",
-            "postgres",
-            "typescript"
-         ]
+         "stacks": "jest,mysql,nodejs",
+         "keywords": "TDD,DDD"
       }
    ],
    "skills": [

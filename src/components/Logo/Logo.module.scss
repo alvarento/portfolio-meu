@@ -1,9 +1,10 @@
 .logo {
+   position: relative;
    display: flex;
    align-items: center;
    justify-content: center;
    text-align: center;
-   /* background-color: red; */
+   // background-color: orange;
 
    svg {
       /* padding-right: 0.8rem; */
@@ -11,11 +12,20 @@
       /* background-color: blue; */
    }
 
-   span {
+   .logoName {
       font-family: "Neuropolitical";
       border-left: .1px solid var(--pure-black);
       padding-left: 0.8rem;
       height: 25px;
+   }
+
+   .slogan {
+      position: absolute;
+      bottom: -5px;
+      right: 0px;
+      font-size: .7rem;
+      letter-spacing: 1px;
+      // background-color: red;
    }
 
 }

@@ -16,10 +16,11 @@
    --font-logo: "Neuropolitical", Arial, Helvetica, sans-serif;
 }
 
-.swiper {
+.swiper-wrapper {
    user-select: none;
    margin-bottom: 50px;
 }
+
 
 .swiper-button-next:active,
 .swiper-button-prev:active {

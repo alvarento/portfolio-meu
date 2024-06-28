@@ -11,9 +11,18 @@ export default function ScrollIndicator() {
       const maxHeight = document.body.scrollHeight - window.innerHeight;
       const percentagem = (window.scrollY / maxHeight) * 100
 
-      const allHeaders = document.querySelectorAll('#header, #headerMobile')
-      const currentHeader = window.innerWidth > 768 ? allHeaders[0] : allHeaders[1]
-      const headerAltura = currentHeader.clientHeight
+      let currentHeader;
+      if (window.innerWidth > 768) {
+         currentHeader = document.querySelector('#header')
+      } else if (window.innerWidth < 769) {
+         currentHeader = document.querySelector('#headerMobile')
+      }
+
+      // console.log(currentHeader)
+
+      // const allHeaders = document.querySelectorAll('#header, #headerMobile')
+      // const currentHeader = window.innerWidth > 768 ? allHeaders[0]! : allHeaders[1]!
+      const headerAltura = currentHeader!.clientHeight
       setScrollTop(percentagem)
       setHeaderAltura(headerAltura)
    }

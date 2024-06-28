@@ -13,10 +13,11 @@ export default function Header() {
    const headerRef = useRef<HTMLElement>(null)
 
    useEffect(() => {
+      const header = headerRef.current
+
       window.addEventListener('scroll', () => {
-         const header = headerRef.current
-         window.scrollY > 0 ? header!.classList.add('scrolling') : '';
-         window.scrollY < 1 ? header!.classList.remove('scrolling') : '';
+         window.scrollY > 0 ? header?.classList.add('scrolling') : '';
+         window.scrollY < 1 ? header?.classList.remove('scrolling') : '';
       })
    }, [])
 

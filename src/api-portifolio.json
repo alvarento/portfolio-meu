@@ -3,11 +3,11 @@
       {
          "id": "1",
          "name": "project 1",
-         "image": "https://raw.githubusercontent.com/alvaronascimento-dev/images/main/meta-og.jpg",
+         "image": "https://images.unsplash.com/photo-1553773077-91673524aafa?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D",
          "description": "Este é o projeto 1",
          "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": []
+         "stacks": "jest,mysql,nodejs"
       },
       {
          "id": "2",
@@ -16,7 +16,7 @@
          "description": "Este é o projeto 2",
          "deploy": "",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": []
+         "stacks": "jest,mysql,nodejs"
       },
       {
          "id": "3",
@@ -25,11 +25,7 @@
          "description": "Este é o projeto 3",
          "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": [
-            "jest",
-            "mysql",
-            "nodejs"
-         ]
+         "stacks": "jest,mysql,nodejs"
       },
       {
          "id": "4",
@@ -38,11 +34,7 @@
          "description": "Este é o projeto 3",
          "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": [
-            "jest",
-            "mysql",
-            "nodejs"
-         ]
+         "stacks": "jest,mysql,nodejs"
       },
       {
          "id": "5",
@@ -51,11 +43,7 @@
          "description": "Este é o projeto 3",
          "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": [
-            "jest",
-            "mysql",
-            "nodejs"
-         ]
+         "stacks": "jest,mysql,nodejs"
       },
       {
          "id": "6",
@@ -64,31 +52,7 @@
          "description": "Este é o projeto 4",
          "deploy": "https://google.com.br",
          "repository": "https://github.com/alvaronascimento-dev",
-         "stacks": [
-            "javascript",
-            "nodejs",
-            "mongodb",
-            "html",
-            "mysql",
-            "postgres",
-            "typescript",
-            "mongoose",
-            "javascript",
-            "nodejs",
-            "mongodb",
-            "html",
-            "mysql",
-            "postgres",
-            "typescript",
-            "mongoose",
-            "javascript",
-            "nodejs",
-            "mongodb",
-            "html",
-            "mysql",
-            "postgres",
-            "typescript"
-         ]
+         "stacks": "jest,mysql,nodejs"
       }
    ],
    "skills": [
