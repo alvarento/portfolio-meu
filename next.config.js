@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+   async redirects() {
+      return [
+         {
+            source: '/vitrinedev',
+            destination: 'https://cursos.alura.com.br/vitrinedev/alvarento',
+            permanent: false
+         }
+      ]
+   },
    images: {
       remotePatterns: [
          {
