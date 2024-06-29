@@ -1,6 +1,9 @@
+// 'use client'
+
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.scss'
+import { usePathname } from 'next/navigation'
 // import { IsOpenMenuContextProvider } from '@/contexts/openMenuContext'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,6 +19,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+  // const pathname = usePathname();
+  // console.log(pathname)
+
   return (
     <html lang="pt-br">
       <body className={inter.className}>
