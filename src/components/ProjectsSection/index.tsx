@@ -32,6 +32,11 @@ export default function ProjectsSection({ projects }: ProjectsSectionProps) {
       swiper.isBeginning ? navPrev.style.visibility = "hidden" : navPrev.style.visibility = "visible";
    }
 
+   console.log("projetos", projects?.length)
+
+   let alignment = projects?.length < 3 ? "center" : "none";
+   console.log(alignment)
+
 
 
    return (

@@ -16,9 +16,13 @@
    --font-logo: "Neuropolitical", Arial, Helvetica, sans-serif;
 }
 
+#projects {
+   /* background-color: red; */
+   margin-bottom: 50px;
+}
+
 .swiper-wrapper {
    user-select: none;
-   margin-bottom: 50px;
 }
 
 
