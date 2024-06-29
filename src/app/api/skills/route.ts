@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
 import { prismaClient } from "../database/prismaClient";
-import db from "../database/dbConfig";
 
 const projects = [
    {
