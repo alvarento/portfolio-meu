@@ -1,8 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { NextRequest, NextResponse } from "next/server";
 import { prismaClient } from "../../database/prismaClient";
-import db from "../../database/dbConfig";
-
 
 export async function DELETE(request: NextRequest, response: NextResponse) {
    const urlArray = request.nextUrl.pathname.split("/")
